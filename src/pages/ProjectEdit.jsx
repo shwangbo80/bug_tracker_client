@@ -1,10 +1,10 @@
 import React from "react";
-import {useEffect, useRef, useState} from "react";
-import {useParams, useHistory} from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
-export default function ProjectEdit({fetchProjects, userList}) {
-  const {id} = useParams();
+export default function ProjectEdit({ fetchProjects, userList }) {
+  const { id } = useParams();
   const history = useHistory();
 
   const [loading, setLoading] = useState(false);
@@ -142,7 +142,8 @@ export default function ProjectEdit({fetchProjects, userList}) {
                         setStatus(e.target.value);
                       }}
                       className="form-select"
-                      id="example-select">
+                      id="example-select"
+                    >
                       <option value="Ongoing">Ongoing</option>
                       <option value="Paused">Paused</option>
                       <option value="Under Review">Under Review</option>
@@ -160,7 +161,8 @@ export default function ProjectEdit({fetchProjects, userList}) {
                       }}
                       className="form-select"
                       id="example-select"
-                      defaultValue={"DEFAULT"}>
+                      defaultValue={"DEFAULT"}
+                    >
                       <option value="DEFAULT" disabled>
                         -- select members --
                       </option>
@@ -177,7 +179,8 @@ export default function ProjectEdit({fetchProjects, userList}) {
                       onClick={() => {
                         handleAddMember();
                         console.log("clicked");
-                      }}>
+                      }}
+                    >
                       Add
                     </button>
                     <div className="d-flex mt-3">
@@ -190,7 +193,8 @@ export default function ProjectEdit({fetchProjects, userList}) {
                               onClick={() => {
                                 setMembersArr(item);
                                 handleDeleteMember(item);
-                              }}>
+                              }}
+                            >
                               X
                             </button>
                           </div>
@@ -260,7 +264,8 @@ export default function ProjectEdit({fetchProjects, userList}) {
                     <div className="col-sm-4">
                       <button
                         className="btn btn-danger rounded-pill mb-5"
-                        onClick={handleSubmit}>
+                        onClick={handleSubmit}
+                      >
                         <i className="mdi mdi-plus" />
                         Update Project
                       </button>

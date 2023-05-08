@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
-import {useRef, useEffect, useState} from "react";
-import {useHistory} from "react-router-dom";
+import { useRef } from "react";
+import { useHistory } from "react-router-dom";
 
-export default function UserCreate({fetchProjects, userList}) {
+export default function UserCreate({ fetchProjects, userList }) {
   let history = useHistory();
 
   const firstName = useRef();
@@ -70,7 +70,8 @@ export default function UserCreate({fetchProjects, userList}) {
                 <form
                   className="needs-validation"
                   noValidate
-                  onSubmit={handleSubmit}>
+                  onSubmit={handleSubmit}
+                >
                   <div className="mb-3">
                     <label className="form-label" htmlFor="validationCustom01">
                       First name
@@ -108,7 +109,8 @@ export default function UserCreate({fetchProjects, userList}) {
                       className="form-select"
                       id="example-select"
                       defaultValue={""}
-                      ref={role}>
+                      ref={role}
+                    >
                       <option value="">-- Select Role --</option>
                       <option value="Admin">Admin</option>
                       <option value="Senior Developer">Senior Developer</option>
@@ -124,7 +126,8 @@ export default function UserCreate({fetchProjects, userList}) {
                   <div className="mb-3">
                     <label
                       className="form-label"
-                      htmlFor="validationCustomUsername">
+                      htmlFor="validationCustomUsername"
+                    >
                       Username
                     </label>
                     <div className="input-group">
@@ -157,7 +160,8 @@ export default function UserCreate({fetchProjects, userList}) {
                   <div className="mb-3">
                     <label
                       className="form-label"
-                      htmlFor="validationCustomUsername">
+                      htmlFor="validationCustomUsername"
+                    >
                       Email
                     </label>
                     <div className="input-group">
@@ -177,7 +181,8 @@ export default function UserCreate({fetchProjects, userList}) {
                   <div className="mb-3">
                     <label
                       className="form-label"
-                      htmlFor="validationCustomUsername">
+                      htmlFor="validationCustomUsername"
+                    >
                       Phone
                     </label>
                     <div className="input-group">
@@ -258,7 +263,8 @@ export default function UserCreate({fetchProjects, userList}) {
                   </div>
                   <button
                     className="btn btn-primary mb-5 rounded-pill"
-                    type="submit">
+                    type="submit"
+                  >
                     Submit form
                   </button>
                 </form>

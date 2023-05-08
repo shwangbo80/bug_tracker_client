@@ -1,8 +1,6 @@
 import React from "react";
-import {useEffect, useState} from "react";
 import axios from "axios";
-import {Link, useHistory, userHistory} from "react-router-dom";
-import ProjectDetails from "./ProjectDetails";
+import { Link, useHistory } from "react-router-dom";
 
 export default function ProjectList({
   user,
@@ -50,7 +48,8 @@ export default function ProjectList({
                 <h4 className="mt-0">
                   <Link
                     to={`/dashboard/projectdetails/${item._id}`}
-                    onClick={() => setSelectedProject(item._id)}>
+                    onClick={() => setSelectedProject(item._id)}
+                  >
                     <span className="text-title">{item.projectname}</span>
                   </Link>
                 </h4>
@@ -110,7 +109,8 @@ export default function ProjectList({
               {user.role === "Admin" ? (
                 <Link
                   to={"/dashboard/createproject"}
-                  className="btn btn-primary rounded-pill mb-3">
+                  className="btn btn-primary rounded-pill mb-3"
+                >
                   <i className="mdi mdi-plus" /> Create Project
                 </Link>
               ) : (

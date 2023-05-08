@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
-import {useState, useEffect} from "react";
-import {useParams, Link} from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-export default function Users({userList, user}) {
+export default function Users({ userList, user }) {
   const [users, setUsers] = useState();
   const [loading, setLoading] = useState(false);
   const apiUrl = process.env.REACT_APP_API_URL;
@@ -67,7 +67,8 @@ export default function Users({userList, user}) {
                   {user.role === "Admin" ? (
                     <Link
                       to={"/dashboard/createuser"}
-                      className="btn btn-primary rounded-pill mb-3">
+                      className="btn btn-primary rounded-pill mb-3"
+                    >
                       <i className="mdi mdi-plus" /> Create User
                     </Link>
                   ) : (

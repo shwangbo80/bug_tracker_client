@@ -1,9 +1,9 @@
 import React from "react";
-import {useRef, useEffect, useState} from "react";
+import { useRef, useState } from "react";
 import axios from "axios";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-export default function TaskCreate({fetchProjects, userList, projects}) {
+export default function TaskCreate({ fetchProjects, userList, projects }) {
   let history = useHistory();
   const taskName = useRef();
   const [projectName, setProjectName] = useState();
@@ -122,7 +122,8 @@ export default function TaskCreate({fetchProjects, userList, projects}) {
                   className="form-select"
                   id="example-select"
                   defaultValue={""}
-                  onChange={(e) => setProjectId(e.target.value)}>
+                  onChange={(e) => setProjectId(e.target.value)}
+                >
                   <option value="">Select project</option>;
                   {projects.map((item, key) => {
                     return (
@@ -144,7 +145,8 @@ export default function TaskCreate({fetchProjects, userList, projects}) {
                   }}
                   className="form-select"
                   id="example-select"
-                  defaultValue={(e) => e.target.value}>
+                  defaultValue={(e) => e.target.value}
+                >
                   <option value="Ongoing">Ongoing</option>
                   <option value="Paused">Paused</option>
                   <option value="Under Review">Under Review</option>
@@ -161,7 +163,8 @@ export default function TaskCreate({fetchProjects, userList, projects}) {
                   }}
                   className="form-select"
                   id="example-select"
-                  defaultValue={(e) => e.target.value}>
+                  defaultValue={(e) => e.target.value}
+                >
                   <option value="Low">Low</option>
                   <option value="Medium">Medium</option>
                   <option value="High">High</option>\
@@ -178,7 +181,8 @@ export default function TaskCreate({fetchProjects, userList, projects}) {
                   }}
                   className="form-select"
                   id="example-select"
-                  defaultValue={"DEFAULT"}>
+                  defaultValue={"DEFAULT"}
+                >
                   <option value="DEFAULT" disabled>
                     -- select members --
                   </option>
@@ -195,7 +199,8 @@ export default function TaskCreate({fetchProjects, userList, projects}) {
                   onClick={() => {
                     handleAddMember();
                     console.log("clicked");
-                  }}>
+                  }}
+                >
                   Add
                 </button>
                 <div className="d-flex mt-3">
@@ -208,7 +213,8 @@ export default function TaskCreate({fetchProjects, userList, projects}) {
                           onClick={() => {
                             setMembers(item);
                             handleDeleteMember(item);
-                          }}>
+                          }}
+                        >
                           X
                         </button>
                       </div>
@@ -222,7 +228,7 @@ export default function TaskCreate({fetchProjects, userList, projects}) {
                   Overview
                 </label>
                 <textarea
-                  style={{resize: "none"}}
+                  style={{ resize: "none" }}
                   rows="10"
                   type="text"
                   id="simpleinput"
@@ -256,7 +262,8 @@ export default function TaskCreate({fetchProjects, userList, projects}) {
                 <div className="col-sm-4">
                   <button
                     className="btn btn-danger rounded-pill mb-5"
-                    onClick={handleSubmit}>
+                    onClick={handleSubmit}
+                  >
                     <i className="mdi mdi-plus" />
                     Create Task
                   </button>

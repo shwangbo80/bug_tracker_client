@@ -1,10 +1,9 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useHistory,
   Redirect,
 } from "react-router-dom";
 import Login from "./pages/Login";
@@ -15,7 +14,6 @@ import Error from "./pages/Error";
 
 function App() {
   const [user, setUser] = useState();
-  const history = useHistory();
 
   useEffect(() => {
     const loggedInUser = JSON.parse(localStorage.getItem("user"));
@@ -31,6 +29,10 @@ function App() {
     <>
       <Router>
         <Switch>
+          <Route exact path="/">
+            <Landing />
+            {/* <Redirect to="/login" /> */}
+          </Route>
           <Route path="/register">
             <Register />
           </Route>
@@ -48,9 +50,7 @@ function App() {
               <Login user={user} setUser={setUser} />
             )}
           </Route>
-          <Route exact path="/">
-            <Redirect to="/login" />
-          </Route>
+
           <Route path="*">
             <Error />
           </Route>

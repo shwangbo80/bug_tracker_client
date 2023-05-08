@@ -34,7 +34,7 @@ export default function Error() {
                         worry... it happens to the best of us. Here's a little
                         tip that might help you get back on track.
                       </p>
-                      <a className="btn btn-info mt-3" href="index.html">
+                      <a className="btn btn-info mt-3" href="/">
                         <i className="mdi mdi-reply" /> Return Home
                       </a>
                     </div>

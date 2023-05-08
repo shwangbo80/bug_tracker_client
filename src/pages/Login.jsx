@@ -1,9 +1,9 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import {useRef} from "react";
+import { Link } from "react-router-dom";
+import { useRef } from "react";
 import axios from "axios";
 
-export default function Login({user, setUser}) {
+export default function Login({ user, setUser }) {
   const email = useRef();
   const password = useRef();
   const apiUrl = process.env.REACT_APP_API_URL;
@@ -31,7 +31,7 @@ export default function Login({user, setUser}) {
               <div className="card">
                 {/* Logo */}
                 <div className="card-header pt-4 pb-4 text-center bg-primary">
-                  <a href="index.html">
+                  <a href="/">
                     <span>
                       <img
                         src="assets/images/logo.png"
@@ -68,7 +68,8 @@ export default function Login({user, setUser}) {
                     <div className="mb-3">
                       <a
                         href="pages-recoverpw.html"
-                        className="text-muted float-end">
+                        className="text-muted float-end"
+                      >
                         <small>Forgot your password?</small>
                       </a>
                       <label htmlFor="password" className="form-label">
