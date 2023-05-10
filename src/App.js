@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import "./App.css";
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,6 +11,9 @@ import Dashboard from "./pages/Dashboard";
 import Landing from "./pages/Landing";
 import Register from "./pages/Register";
 import Error from "./pages/Error";
+import About from "./pages/About";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 function App() {
   const [user, setUser] = useState();
@@ -27,15 +30,9 @@ function App() {
 
   return (
     <>
+      {/* <Nav /> */}
       <Router>
         <Switch>
-          <Route exact path="/">
-            <Landing />
-            {/* <Redirect to="/login" /> */}
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route>
           <Route path="/login">
             {user ? (
               <Redirect to="/dashboard" />
@@ -50,12 +47,23 @@ function App() {
               <Login user={user} setUser={setUser} />
             )}
           </Route>
-
+          <Route path="/">
+            <Nav />
+            <Switch>
+              <Route exact path="/">
+                <Landing />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+            </Switch>
+          </Route>
           <Route path="*">
             <Error />
           </Route>
         </Switch>
       </Router>
+      <Footer />
     </>
   );
 }

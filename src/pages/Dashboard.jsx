@@ -107,7 +107,7 @@ export default function Dashboard({ user, setUser }) {
             </button>
             <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
               <a className="navbar-brand" href="/">
-                Bug Tracker
+                Project Manager
               </a>
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
@@ -143,7 +143,7 @@ export default function Dashboard({ user, setUser }) {
                   <div className="col-12">
                     <div className="page-title-box d-flex justify-content-between">
                       <h2>{`Welcome ${user.firstname}, ${user.lastname}`}</h2>
-                      <Link to={"/login"}>
+                      {/* <Link to={"/login"}>
                         <button
                           type="button"
                           className="btn btn-danger rounded-pill "
@@ -151,7 +151,7 @@ export default function Dashboard({ user, setUser }) {
                         >
                           Log out
                         </button>
-                      </Link>
+                      </Link> */}
                     </div>
                   </div>
                 </div>
@@ -245,22 +245,6 @@ export default function Dashboard({ user, setUser }) {
               </Route>
             </Switch>
           </div>
-
-          {/* Footer Start */}
-          <footer className="footer">
-            <div className="container-fluid">
-              <div className="row">
-                <div className="col-md-6">© Hyper - Coderthemes.com</div>
-                <div className="col-md-6">
-                  <div className="text-md-end footer-links d-none d-md-block">
-                    <a href="#">About</a>
-                    <a href="#">Support</a>
-                    <a href="#">Contact Us</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </footer>
         </div>
       </div>
     </>

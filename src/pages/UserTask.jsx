@@ -199,7 +199,7 @@ export default function UserTask({
                                             <i className="uil uil-comment-message font-16 me-1" />{" "}
                                             21
                                           </li>
-                                          <li className="list-inline-item ms-2">
+                                          <li className="list-inline-item ms-2 mt-2 mb-2">
                                             <span
                                               className={`${renderPriority(
                                                 item.priority
@@ -214,7 +214,7 @@ export default function UserTask({
                                     {/* end .d-flex*/}
                                   </div>{" "}
                                   {/* end col */}
-                                  <hr></hr>
+                                  {/* <hr></hr> */}
                                 </div>
                               );
                             })}
@@ -286,7 +286,7 @@ export default function UserTask({
                                             <i className="uil uil-comment-message font-16 me-1" />{" "}
                                             21
                                           </li>
-                                          <li className="list-inline-item ms-2">
+                                          <li className="list-inline-item ms-2 mt-2 mb-2">
                                             <span
                                               className={`${renderPriority(
                                                 item.priority
@@ -301,7 +301,7 @@ export default function UserTask({
                                     {/* end .d-flex*/}
                                   </div>{" "}
                                   {/* end col */}
-                                  <hr></hr>
+                                  {/* <hr></hr> */}
                                 </div>
                               );
                             })}
@@ -373,7 +373,7 @@ export default function UserTask({
                                             <i className="uil uil-comment-message font-16 me-1" />{" "}
                                             21
                                           </li>
-                                          <li className="list-inline-item ms-2">
+                                          <li className="list-inline-item ms-2 mt-2 mb-2">
                                             <span
                                               className={`${renderPriority(
                                                 item.priority
@@ -388,7 +388,7 @@ export default function UserTask({
                                     {/* end .d-flex*/}
                                   </div>{" "}
                                   {/* end col */}
-                                  <hr></hr>
+                                  {/* <hr></hr> */}
                                 </div>
                               );
                             })}
@@ -460,7 +460,7 @@ export default function UserTask({
                                             <i className="uil uil-comment-message font-16 me-1" />{" "}
                                             21
                                           </li>
-                                          <li className="list-inline-item ms-2">
+                                          <li className="list-inline-item ms-2 mt-2 mb-2">
                                             <span
                                               className={`${renderPriority(
                                                 item.priority
@@ -475,7 +475,7 @@ export default function UserTask({
                                     {/* end .d-flex*/}
                                   </div>{" "}
                                   {/* end col */}
-                                  <hr></hr>
+                                  {/* <hr></hr> */}
                                 </div>
                               );
                             })}

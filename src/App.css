@@ -7,6 +7,21 @@
   pointer-events: none;
 }
 
+p {
+  font-size: 12pt;
+}
+
+.profileText {
+  font-size: 13pt;
+  text-align: left;
+}
+
+.profileImg {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

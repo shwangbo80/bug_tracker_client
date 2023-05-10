@@ -1,11 +1,11 @@
 import React from "react";
-import {useEffect, useState} from "react";
-import {useParams, Link, useHistory} from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams, Link, useHistory } from "react-router-dom";
 import axios from "axios";
 
-export default function UserInfo({user}) {
+export default function UserInfo({ user }) {
   const history = useHistory();
-  const {id} = useParams();
+  const { id } = useParams();
   const [fetchedUser, setFetchedUser] = useState();
   const [loading, setLoading] = useState(false);
   const apiUrl = process.env.REACT_APP_API_URL;
@@ -98,7 +98,8 @@ export default function UserInfo({user}) {
                           {user.role == "Admin" ? (
                             <div className="text-center mt-sm-0 mt-3 text-sm-end">
                               <Link
-                                to={`/dashboard/useredit/${fetchedUser._id}`}>
+                                to={`/dashboard/useredit/${fetchedUser._id}`}
+                              >
                                 <button type="button" className="btn btn-light">
                                   <i className="mdi mdi-account-edit me-1" />{" "}
                                   Edit Profile
@@ -107,7 +108,8 @@ export default function UserInfo({user}) {
                               <button
                                 type="button"
                                 className="btn btn-danger ms-3"
-                                onClick={() => handleDelete()}>
+                                onClick={() => handleDelete()}
+                              >
                                 <i className="mdi mdi-delete-forever ms-1" />{" "}
                                 Delete User
                               </button>
@@ -178,7 +180,7 @@ export default function UserInfo({user}) {
                     <div className="card-body">
                       <h4 className="header-title mb-3">Tasks</h4>
                       <div dir="ltr">
-                        <div style={{height: 260}} className="chartjs-chart">
+                        <div style={{ height: 260 }} className="chartjs-chart">
                           <canvas id="high-performing-product" />
                         </div>
                       </div>

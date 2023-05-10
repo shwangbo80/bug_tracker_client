@@ -66,12 +66,6 @@ export default function Login({ user, setUser }) {
                       />
                     </div>
                     <div className="mb-3">
-                      <a
-                        href="pages-recoverpw.html"
-                        className="text-muted float-end"
-                      >
-                        <small>Forgot your password?</small>
-                      </a>
                       <label htmlFor="password" className="form-label">
                         Password
                       </label>
@@ -83,9 +77,6 @@ export default function Login({ user, setUser }) {
                           placeholder="Enter your password"
                           ref={password}
                         />
-                        <div className="input-group-text" data-password="false">
-                          <span className="password-eye" />
-                        </div>
                       </div>
                     </div>
 
@@ -93,11 +84,10 @@ export default function Login({ user, setUser }) {
                       <button className="btn btn-primary" onClick={handleLogin}>
                         Log In
                       </button>
-                      <Link to={"/dashboard"}>
-                        <button className="btn btn-success ms-2">
-                          Demo Account
-                        </button>
-                      </Link>
+                      <Link to={"/dashboard"}></Link>
+                      <h4 className="mt-3 mb-0">For guest users</h4>
+                      <p className="mb-0">Email: guest@email.com</p>
+                      <p>Password: password123</p>
                     </div>
                   </form>
                 </div>{" "}
