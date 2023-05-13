@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
 import axios from "axios";
+import UserTask from "./UserTask";
 
 export default function UserInfo({ user }) {
   const history = useHistory();
@@ -177,8 +178,8 @@ export default function UserInfo({ user }) {
                 <div className="col-xl-8">
                   {/* Chart*/}
                   <div className="card">
-                    <div className="card-body">
-                      <h4 className="header-title mb-3">Tasks</h4>
+                    <div className="card-body pt-0">
+                      <UserTask user={fetchedUser} />
                       <div dir="ltr">
                         <div style={{ height: 260 }} className="chartjs-chart">
                           <canvas id="high-performing-product" />

@@ -9,7 +9,6 @@ import {
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Landing from "./pages/Landing";
-import Register from "./pages/Register";
 import Error from "./pages/Error";
 import About from "./pages/About";
 import Nav from "./components/Nav";

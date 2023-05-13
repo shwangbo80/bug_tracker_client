@@ -23,6 +23,7 @@ import UserCreate from "./UserCreate";
 import UserEdit from "./UserEdit";
 import UserInfo from "./UserInfo";
 import UserTask from "./UserTask";
+
 const apiUrl = process.env.REACT_APP_API_URL;
 
 export default function Dashboard({ user, setUser }) {
@@ -143,7 +144,7 @@ export default function Dashboard({ user, setUser }) {
                   <div className="col-12">
                     <div className="page-title-box d-flex justify-content-between">
                       <h2>{`Welcome ${user.firstname}, ${user.lastname}`}</h2>
-                      {/* <Link to={"/login"}>
+                      <Link to={"/"}>
                         <button
                           type="button"
                           className="btn btn-danger rounded-pill "
@@ -151,7 +152,7 @@ export default function Dashboard({ user, setUser }) {
                         >
                           Log out
                         </button>
-                      </Link> */}
+                      </Link>
                     </div>
                   </div>
                 </div>

@@ -16,8 +16,6 @@ export default function UserTask({
   const [taskLoading, setTaskLoading] = useState(false);
   const apiUrl = process.env.REACT_APP_API_URL;
 
-  console.log(tasks);
-
   useEffect(() => {
     filterUserProjects();
     filterUserTasks();
@@ -31,6 +29,7 @@ export default function UserTask({
     setUserProjects(filteredUserProjects);
     setProjectLoading(true);
   };
+
   const filterUserTasks = async () => {
     const response = await axios.get(`${apiUrl}/api/tasks`);
     const filteredUserTasks = response.data.filter((item) => {
@@ -50,8 +49,16 @@ export default function UserTask({
     }
   };
 
-  console.log(userProjects);
-  console.log(userTasks);
+  const getProjectName = (id) => {
+    if (!projectLoading || !taskLoading) {
+      return <p>loading</p>;
+    } else {
+      const filteredTask = userProjects.filter((item) => {
+        return item._id == id;
+      });
+      return filteredTask[0].projectname;
+    }
+  };
 
   const renderStatus = (item) => {
     if (item.priority === "Low") {
@@ -74,7 +81,7 @@ export default function UserTask({
               <div className="page-title-right">
                 <div className="app-search"></div>
               </div>
-              <h4 className="page-title">My Projects</h4>
+              <h4 className="my-3">{`${user.firstname}'s Projects and Tasks`}</h4>
             </div>
             {userProjects.map((item, key) => {
               return (
@@ -176,6 +183,9 @@ export default function UserTask({
                                           <h4 className="text-dark">
                                             {item.taskname}
                                           </h4>
+                                          <p className="text-dark">
+                                            {getProjectName(item.projectid)}
+                                          </p>
                                         </label>
                                       </Link>
                                     </div>{" "}
@@ -194,10 +204,6 @@ export default function UserTask({
                                           <li className="list-inline-item">
                                             <i className="uil uil-schedule font-16 me-1" />{" "}
                                             Due Date: {item.duedate}
-                                          </li>
-                                          <li className="list-inline-item ms-1">
-                                            <i className="uil uil-comment-message font-16 me-1" />{" "}
-                                            21
                                           </li>
                                           <li className="list-inline-item ms-2 mt-2 mb-2">
                                             <span
@@ -263,6 +269,9 @@ export default function UserTask({
                                           <h4 className="text-dark">
                                             {item.taskname}
                                           </h4>
+                                          <p className="text-dark">
+                                            {getProjectName(item.projectid)}
+                                          </p>
                                         </label>
                                       </Link>
                                     </div>{" "}
@@ -281,10 +290,6 @@ export default function UserTask({
                                           <li className="list-inline-item">
                                             <i className="uil uil-schedule font-16 me-1" />{" "}
                                             Due Date: {item.duedate}
-                                          </li>
-                                          <li className="list-inline-item ms-1">
-                                            <i className="uil uil-comment-message font-16 me-1" />{" "}
-                                            21
                                           </li>
                                           <li className="list-inline-item ms-2 mt-2 mb-2">
                                             <span
@@ -350,6 +355,9 @@ export default function UserTask({
                                           <h4 className="text-dark">
                                             {item.taskname}
                                           </h4>
+                                          <p className="text-dark">
+                                            {getProjectName(item.projectid)}
+                                          </p>
                                         </label>
                                       </Link>
                                     </div>{" "}
@@ -368,10 +376,6 @@ export default function UserTask({
                                           <li className="list-inline-item">
                                             <i className="uil uil-schedule font-16 me-1" />{" "}
                                             Due Date: {item.duedate}
-                                          </li>
-                                          <li className="list-inline-item ms-1">
-                                            <i className="uil uil-comment-message font-16 me-1" />{" "}
-                                            21
                                           </li>
                                           <li className="list-inline-item ms-2 mt-2 mb-2">
                                             <span
@@ -437,6 +441,9 @@ export default function UserTask({
                                           <h4 className="text-dark">
                                             {item.taskname}
                                           </h4>
+                                          <p className="text-dark">
+                                            {getProjectName(item.projectid)}
+                                          </p>
                                         </label>
                                       </Link>
                                     </div>{" "}
@@ -455,10 +462,6 @@ export default function UserTask({
                                           <li className="list-inline-item">
                                             <i className="uil uil-schedule font-16 me-1" />{" "}
                                             Due Date: {item.duedate}
-                                          </li>
-                                          <li className="list-inline-item ms-1">
-                                            <i className="uil uil-comment-message font-16 me-1" />{" "}
-                                            21
                                           </li>
                                           <li className="list-inline-item ms-2 mt-2 mb-2">
                                             <span
