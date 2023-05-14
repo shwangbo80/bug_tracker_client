@@ -92,10 +92,13 @@ export default function Users({ userList, user }) {
                                 />
                               </Link> */}
                               <Link to={`/dashboard/userinfo/${item._id}`}>
-                                <h4 className="mt-3 my-1">
-                                  {item.firstname}, {item.lastname}
-                                </h4>
+                                <h4 className="mt-3 my-1">{item.username}</h4>
                               </Link>
+                              <h4 className="mt-3 my-1">
+                                {!item.firstname ? "N/A" : item.firstname}
+                                {", "}
+                                {!item.lastname ? "N/A" : item.lastname}
+                              </h4>
                               <p className="mb-0 text-muted mb-2">
                                 {item.role}
                               </p>

@@ -47,7 +47,7 @@ function App() {
             )}
           </Route>
           <Route path="/">
-            <Nav />
+            <Nav user={user} />
             <Switch>
               <Route exact path="/">
                 <Landing />

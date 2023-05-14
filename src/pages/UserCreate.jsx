@@ -1,11 +1,14 @@
 import React from "react";
 import axios from "axios";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 export default function UserCreate({ fetchProjects, userList }) {
-  let history = useHistory();
+  const [usernameErrMessage, setUsernameErrMessage] = useState("");
+  const [passwordErrMessage, setPasswordErrMessage] = useState("");
+  const [emailErrMessage, setEmailErrMessage] = useState("");
 
+  let history = useHistory();
   const firstName = useRef();
   const lastName = useRef();
   const role = useRef();
@@ -21,23 +24,41 @@ export default function UserCreate({ fetchProjects, userList }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const response = await axios.post(`${apiUrl}/api/auth/register`, {
-      firstname: firstName.current.value,
-      lastname: lastName.current.value,
-      role: role.current.value,
-      username: userName.current.value,
-      password: password.current.value,
-      email: email.current.value,
-      phone: phone.current.value,
-      street: street.current.value,
-      city: city.current.value,
-      state: state.current.value,
-      zip: zip.current.value,
-    });
-    console.log(response);
-    fetchProjects();
-    history.push("/dashboard/users");
+    if (userName.current.value === "") {
+      setUsernameErrMessage("Please enter a valid username");
+    } else {
+      setUsernameErrMessage("");
+    }
+    if (password.current.value === "") {
+      setPasswordErrMessage("Please enter a valid password");
+    } else {
+      setPasswordErrMessage("");
+    }
+    if (email.current.value === "") {
+      setEmailErrMessage("Please enter a valid email address");
+    } else {
+      setEmailErrMessage("");
+    }
+    try {
+      const response = await axios.post(`${apiUrl}/api/auth/register`, {
+        firstname: firstName.current.value,
+        lastname: lastName.current.value,
+        role: role.current.value,
+        username: userName.current.value,
+        password: password.current.value,
+        email: email.current.value,
+        phone: phone.current.value,
+        street: street.current.value,
+        city: city.current.value,
+        state: state.current.value,
+        zip: zip.current.value,
+      });
+      console.log(response);
+      fetchProjects();
+      history.push("/dashboard/users");
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
@@ -63,18 +84,77 @@ export default function UserCreate({ fetchProjects, userList }) {
               </div>
             </div>
           </div>
-
           <div className="row mt-5 px-3">
             <div className="col-md-12 col-xxl-6">
               <div className="mb-3">
+                {/* Form start */}
                 <form
                   className="needs-validation"
                   noValidate
                   onSubmit={handleSubmit}
                 >
+                  {/* Username form start */}
+                  <div className="mb-3">
+                    <label
+                      className="form-label"
+                      htmlFor="validationCustomUsername"
+                    >
+                      Username
+                      <span className="opacity-50 ms-2">*Required</span>
+                    </label>
+                    <div className="input-group">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Username"
+                        aria-describedby="inputGroupPrepend"
+                        required
+                        ref={userName}
+                      />
+                    </div>
+                    <p className="text-danger">{usernameErrMessage}</p>
+                  </div>
+                  {/* Password form start */}
+                  <div className="mb-3">
+                    <label className="form-label" htmlFor="validationCustom02">
+                      password
+                      <span className="opacity-50 ms-2">*Required</span>
+                    </label>
+                    <input
+                      type="password"
+                      className="form-control"
+                      placeholder="Password"
+                      defaultValue=""
+                      ref={password}
+                    />
+                  </div>
+                  <p className="text-danger">{passwordErrMessage}</p>
+                  {/* Email form start */}
+                  <div className="mb-3">
+                    <label
+                      className="form-label"
+                      htmlFor="validationCustomUsername"
+                    >
+                      Email
+                      <span className="opacity-50 ms-2">*Required</span>
+                    </label>
+                    <div className="input-group">
+                      <input
+                        type="email"
+                        className="form-control"
+                        placeholder="Email"
+                        aria-describedby="inputGroupPrepend"
+                        required
+                        ref={email}
+                      />
+                    </div>
+                    <p className="text-danger">{emailErrMessage}</p>
+                  </div>
+                  {/* First name form start */}
                   <div className="mb-3">
                     <label className="form-label" htmlFor="validationCustom01">
                       First name
+                      <span className="opacity-50 ms-2">*Optional</span>
                     </label>
                     <input
                       type="text"
@@ -85,11 +165,12 @@ export default function UserCreate({ fetchProjects, userList }) {
                       required
                       ref={firstName}
                     />
-                    <div className="valid-feedback">Looks good!</div>
                   </div>
+                  {/* Last name form start */}
                   <div className="mb-3">
                     <label className="form-label" htmlFor="validationCustom02">
                       Last name
+                      <span className="opacity-50 ms-2">*Optional</span>
                     </label>
                     <input
                       type="text"
@@ -99,11 +180,34 @@ export default function UserCreate({ fetchProjects, userList }) {
                       required
                       ref={lastName}
                     />
-                    <div className="valid-feedback">Looks good!</div>
                   </div>
+                  {/* Phone number form start */}
+                  <div className="mb-3">
+                    <label
+                      className="form-label"
+                      htmlFor="validationCustomUsername"
+                    >
+                      Phone
+                      <span className="opacity-50 ms-2">*Optional</span>
+                    </label>
+                    <div className="input-group">
+                      <input
+                        type="tel"
+                        className="form-control"
+                        placeholder="Phone"
+                        aria-describedby="inputGroupPrepend"
+                        required
+                        ref={phone}
+                      />
+                    </div>
+                  </div>
+                  {/* Role form start */}
                   <div className="mb-3">
                     <label htmlFor="example-select" className="form-label">
                       Role
+                      <span className="opacity-50 ms-2">
+                        *If none selected, Guest will be default
+                      </span>
                     </label>
                     <select
                       className="form-select"
@@ -123,85 +227,11 @@ export default function UserCreate({ fetchProjects, userList }) {
                       <option value="Dev-Ops Engineer">Dev-Ops Engineer</option>
                     </select>
                   </div>
-                  <div className="mb-3">
-                    <label
-                      className="form-label"
-                      htmlFor="validationCustomUsername"
-                    >
-                      Username
-                    </label>
-                    <div className="input-group">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Username"
-                        aria-describedby="inputGroupPrepend"
-                        required
-                        ref={userName}
-                      />
-                      <div className="invalid-feedback">
-                        Please choose a username.
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label" htmlFor="validationCustom02">
-                      password
-                    </label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      placeholder="Password"
-                      defaultValue=""
-                      ref={password}
-                    />
-                    <div className="valid-feedback">Looks good!</div>
-                  </div>
-                  <div className="mb-3">
-                    <label
-                      className="form-label"
-                      htmlFor="validationCustomUsername"
-                    >
-                      Email
-                    </label>
-                    <div className="input-group">
-                      <input
-                        type="email"
-                        className="form-control"
-                        placeholder="Email"
-                        aria-describedby="inputGroupPrepend"
-                        required
-                        ref={email}
-                      />
-                      <div className="invalid-feedback">
-                        Please choose a username.
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mb-3">
-                    <label
-                      className="form-label"
-                      htmlFor="validationCustomUsername"
-                    >
-                      Phone
-                    </label>
-                    <div className="input-group">
-                      <input
-                        type="tel"
-                        className="form-control"
-                        placeholder="Phone"
-                        aria-describedby="inputGroupPrepend"
-                        required
-                        ref={phone}
-                      />
-                      <div className="invalid-feedback">
-                        Please choose a username.
-                      </div>
-                    </div>
-                  </div>
+                  {/* Street address form start */}
                   <div className="mb-3">
                     <label className="form-label" htmlFor="validationCustom03">
                       Street
+                      <span className="opacity-50 ms-2">*Optional</span>
                     </label>
                     <input
                       type="text"
@@ -210,13 +240,12 @@ export default function UserCreate({ fetchProjects, userList }) {
                       required
                       ref={street}
                     />
-                    <div className="invalid-feedback">
-                      Please provide a valid street.
-                    </div>
                   </div>
+                  {/* City address form start */}
                   <div className="mb-3">
                     <label className="form-label" htmlFor="validationCustom03">
                       City
+                      <span className="opacity-50 ms-2">*Optional</span>
                     </label>
                     <input
                       type="text"
@@ -225,13 +254,12 @@ export default function UserCreate({ fetchProjects, userList }) {
                       required
                       ref={city}
                     />
-                    <div className="invalid-feedback">
-                      Please provide a valid city.
-                    </div>
                   </div>
+                  {/* State address form start */}
                   <div className="mb-3">
                     <label className="form-label" htmlFor="validationCustom04">
                       State
+                      <span className="opacity-50 ms-2">*Optional</span>
                     </label>
                     <input
                       type="text"
@@ -241,13 +269,12 @@ export default function UserCreate({ fetchProjects, userList }) {
                       required
                       ref={state}
                     />
-                    <div className="invalid-feedback">
-                      Please provide a valid state.
-                    </div>
                   </div>
+                  {/* Zip code address start */}
                   <div className="mb-3">
                     <label className="form-label" htmlFor="validationCustom05">
                       Zip
+                      <span className="opacity-50 ms-2">*Optional</span>
                     </label>
                     <input
                       type="text"
@@ -257,10 +284,8 @@ export default function UserCreate({ fetchProjects, userList }) {
                       required
                       ref={zip}
                     />
-                    <div className="invalid-feedback">
-                      Please provide a valid zip.
-                    </div>
                   </div>
+                  {/* Submit from button */}
                   <button
                     className="btn btn-primary mb-5 rounded-pill"
                     type="submit"

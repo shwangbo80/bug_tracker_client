@@ -1,6 +1,6 @@
 import React from "react";
 
-function Nav() {
+function Nav(props) {
   return (
     <>
       <nav className="navbar navbar-expand-lg py-lg-3 navbar-dark">
@@ -42,7 +42,8 @@ function Nav() {
                   href="/login"
                   className="btn btn-sm btn-light rounded-pill d-none d-lg-inline-flex"
                 >
-                  <i className="mdi mdi-lock me-2" /> Login
+                  <i className="mdi mdi-lock me-2" />{" "}
+                  {props.user ? "Dashboard" : "Login"}
                 </a>
               </li>
             </ul>

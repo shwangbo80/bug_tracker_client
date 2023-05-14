@@ -141,9 +141,23 @@ export default function UserInfo({ user }) {
                       <hr />
                       <div className="text-start">
                         <p className="text-muted">
-                          <strong>Full Name :</strong>{" "}
+                          <strong>Username :</strong>
+                          <span className="ms-2">{fetchedUser.username}</span>
+                        </p>
+                        <p className="text-muted">
+                          <strong>First Name :</strong>
                           <span className="ms-2">
-                            {fetchedUser.firstname}, {fetchedUser.lastname}
+                            {!fetchedUser.firstname
+                              ? "N/A"
+                              : fetchedUser.firstname}
+                          </span>
+                        </p>
+                        <p className="text-muted">
+                          <strong>Last Name :</strong>
+                          <span className="ms-2">
+                            {!fetchedUser.lastname
+                              ? "N/A"
+                              : fetchedUser.lastname}
                           </span>
                         </p>
                         <p className="text-muted">
