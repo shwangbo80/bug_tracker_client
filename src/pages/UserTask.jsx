@@ -32,8 +32,9 @@ export default function UserTask({
 
   const filterUserTasks = async () => {
     const response = await axios.get(`${apiUrl}/api/tasks`);
+    console.log(response.data);
     const filteredUserTasks = response.data.filter((item) => {
-      return item.members == user.username;
+      return item.members.includes(user.username);
     });
     setUserTasks(filteredUserTasks);
     setTaskLoading(true);
@@ -56,7 +57,7 @@ export default function UserTask({
       const filteredTask = userProjects.filter((item) => {
         return item._id == id;
       });
-      return filteredTask[0].projectname;
+      return filteredTask.projectname;
     }
   };
 
@@ -112,8 +113,8 @@ export default function UserTask({
                         })}
                       </div>
                       <div className="mt-3 d-flex justify-content-between">
-                        <p>Start: {item.startdate}</p>
-                        <p>Due: {item.duedate}</p>
+                        <span>Start: {item.startdate}</span>
+                        <span>Due: {item.duedate}</span>
                       </div>
                     </div>
                   </div>
@@ -180,9 +181,9 @@ export default function UserTask({
                                           className="form-check-label"
                                           htmlFor="task1"
                                         >
-                                          <h4 className="text-dark">
+                                          <h5 className="text-dark">
                                             {item.taskname}
-                                          </h4>
+                                          </h5>
                                           <p className="text-dark">
                                             {getProjectName(item.projectid)}
                                           </p>
@@ -266,9 +267,9 @@ export default function UserTask({
                                           className="form-check-label"
                                           htmlFor="task1"
                                         >
-                                          <h4 className="text-dark">
+                                          <h5 className="text-dark">
                                             {item.taskname}
-                                          </h4>
+                                          </h5>
                                           <p className="text-dark">
                                             {getProjectName(item.projectid)}
                                           </p>
@@ -352,9 +353,9 @@ export default function UserTask({
                                           className="form-check-label"
                                           htmlFor="task1"
                                         >
-                                          <h4 className="text-dark">
+                                          <h5 className="text-dark">
                                             {item.taskname}
-                                          </h4>
+                                          </h5>
                                           <p className="text-dark">
                                             {getProjectName(item.projectid)}
                                           </p>
@@ -438,9 +439,9 @@ export default function UserTask({
                                           className="form-check-label"
                                           htmlFor="task1"
                                         >
-                                          <h4 className="text-dark">
+                                          <h5 className="text-dark">
                                             {item.taskname}
-                                          </h4>
+                                          </h5>
                                           <p className="text-dark">
                                             {getProjectName(item.projectid)}
                                           </p>

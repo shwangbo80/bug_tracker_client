@@ -7,6 +7,8 @@ export default function ProjectEdit({ fetchProjects, userList }) {
   const { id } = useParams();
   const history = useHistory();
 
+console.log(id)
+
   const [loading, setLoading] = useState(false);
   const [singleProject, setSingleProject] = useState();
   const [projectName, setProjectname] = useState();
@@ -65,7 +67,7 @@ export default function ProjectEdit({ fetchProjects, userList }) {
       return;
     }
     try {
-      const response = await axios.put(`apiUrl/api/projects/update/${id}`, {
+      const response = await axios.put(`${apiUrl}/api/projects/update/${id}`, {
         projectname: projectName,
         status: status,
         overview: overview,

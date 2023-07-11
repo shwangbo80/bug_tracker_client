@@ -3,11 +3,10 @@ import React from "react";
 function Nav(props) {
   return (
     <>
-      <nav className="navbar navbar-expand-lg py-lg-3 navbar-dark">
+      <nav className="navbar navbar-expand-lg py-lg-3 navbar-light bg-light">
         <div className="container">
-          {/* logo */}
           <a href="/" className="navbar-brand mt-2 me-lg-5">
-            <p className="text-light fw-bold">Project Manager</p>
+            <p className="text-dark fw-bold">Project Manager</p>
           </a>
           <button
             className="navbar-toggler"
@@ -20,9 +19,7 @@ function Nav(props) {
           >
             <i className="mdi mdi-menu" />
           </button>
-          {/* menus */}
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
-            {/* left menu */}
             <ul className="navbar-nav me-auto align-items-center">
               <li className="nav-item mx-lg-1">
                 <a className="nav-link active" href="/">
@@ -35,7 +32,6 @@ function Nav(props) {
                 </a>
               </li>
             </ul>
-            {/* right menu */}
             <ul className="navbar-nav ms-auto align-items-center">
               <li className="nav-item me-0">
                 <a
