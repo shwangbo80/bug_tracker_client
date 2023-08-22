@@ -257,8 +257,13 @@ export default function ProjectDetails({
                       aria-expanded="false"
                       aria-controls="ongoingTasks"
                     >
+                      {/* <i className="uil uil-angle-down font-18" />
+                      Ongoing <span className="text-muted">(10)</span> */}
                       <i className="uil uil-angle-down font-18" />
-                      Ongoing <span className="text-muted">(10)</span>
+                      Ongoing <span className="text-muted">(
+                        {projectTasks.filter((a) => a.status === "Ongoing").length}
+                      )
+                          </span>
                     </a>
                   </h5>
                   <div className="collapse show" id="ongoingTasks">
@@ -344,7 +349,10 @@ export default function ProjectDetails({
                       aria-controls="pausedTasks"
                     >
                       <i className="uil uil-angle-down font-18" />
-                      Paused <span className="text-muted">(10)</span>
+                      Paused <span className="text-muted">(
+                      {projectTasks.filter((a) => a.status === "Paused").length}
+                      )
+                      </span>
                     </a>
                   </h5>
                   <div className="collapse show" id="pausedTasks">
@@ -430,7 +438,11 @@ export default function ProjectDetails({
                       aria-controls="underReviewTasks"
                     >
                       <i className="uil uil-angle-down font-18" />
-                      Under Review <span className="text-muted">(10)</span>
+                      Under Review <span className="text-muted">
+                      (
+                        {projectTasks.filter((a) => a.status === "Under Review").length}
+                      )
+                      </span>
                     </a>
                   </h5>
                   <div className="collapse show" id="underReviewTasks">
@@ -516,7 +528,11 @@ export default function ProjectDetails({
                       aria-controls="completedTasks"
                     >
                       <i className="uil uil-angle-down font-18" />
-                      Completed <span className="text-muted">(10)</span>
+                      Completed <span className="text-muted">
+                      (
+                        {projectTasks.filter((a) => a.status === "Completed").length}
+                      )
+                      </span>
                     </a>
                   </h5>
                   <div className="collapse show" id="completedTasks">
