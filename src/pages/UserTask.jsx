@@ -57,7 +57,7 @@ export default function UserTask({
       const filteredTask = userProjects.filter((item) => {
         return item._id == id;
       });
-      return filteredTask.projectname;
+      return filteredTask[0].projectname;
     }
   };
 
@@ -184,7 +184,7 @@ export default function UserTask({
                                           <h5 className="text-dark">
                                             {item.taskname}
                                           </h5>
-                                          <p className="text-dark">
+                                          <p className="text-primary fw-bold">
                                             {getProjectName(item.projectid)}
                                           </p>
                                         </label>
@@ -268,7 +268,7 @@ export default function UserTask({
                                           <h5 className="text-dark">
                                             {item.taskname}
                                           </h5>
-                                          <p className="text-dark">
+                                          <p className="text-primary fw-bold">
                                             {getProjectName(item.projectid)}
                                           </p>
                                         </label>
@@ -352,7 +352,7 @@ export default function UserTask({
                                           <h5 className="text-dark">
                                             {item.taskname}
                                           </h5>
-                                          <p className="text-dark">
+                                          <p className="text-primary fw-bold">
                                             {getProjectName(item.projectid)}
                                           </p>
                                         </label>
@@ -436,7 +436,7 @@ export default function UserTask({
                                           <h5 className="text-dark">
                                             {item.taskname}
                                           </h5>
-                                          <p className="text-dark">
+                                          <p className="text-primary fw-bold">
                                             {getProjectName(item.projectid)}
                                           </p>
                                         </label>
