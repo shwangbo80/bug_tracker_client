@@ -74,9 +74,7 @@ export default function TaskCreate({ fetchProjects, userList, projects }) {
   return (
     <>
       <div className="content">
-        {/* Start Content*/}
         <div className="container-fluid">
-          {/* start page title */}
           <div className="row">
             <div className="col-12">
               <div className="page-title-box">
@@ -95,13 +93,9 @@ export default function TaskCreate({ fetchProjects, userList, projects }) {
               </div>
             </div>
           </div>
-          {/* end page title */}
 
-          {/* end row*/}
           <div className="row ms-5 mt-5">
             <div className="col-md-12 col-xxl-6">
-              {/* project form */}
-
               <div className="mb-3">
                 <label htmlFor="simpleinput" className="form-label">
                   Task Name
@@ -269,13 +263,9 @@ export default function TaskCreate({ fetchProjects, userList, projects }) {
                   </button>
                 </div>
               </div>
-              {/* end form*/}
-            </div>{" "}
-            {/* end col */}
+            </div>
           </div>
-          {/* end row*/}
-        </div>{" "}
-        {/* container */}
+        </div>
       </div>
     </>
   );

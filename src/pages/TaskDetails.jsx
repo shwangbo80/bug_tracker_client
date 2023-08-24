@@ -87,7 +87,6 @@ export default function TaskDetails({user}) {
       return (
         <>
           <div className="container-fluid">
-            {/* start page title */}
             <div className="row">
               <div className="col-12">
                 <div className="page-title-box">
@@ -95,10 +94,8 @@ export default function TaskDetails({user}) {
                 </div>
               </div>
             </div>
-            {/* end page title */}
             <div className="row">
               <div>
-                {/* project card */}
                 <div className="card d-block">
                   <div className="card-body">
                     {user.role === "Admin" ||
@@ -133,9 +130,6 @@ export default function TaskDetails({user}) {
                     ) : (
                       <div></div>
                     )}
-                    {/* end dropdown menu*/}
-                    {/* end dropdown*/}
-                    {/* end form-check*/}
                     <div className="clearfix mt-3" />
                     <div className="d-flex justify-content-between">
                       <h2>{taskDetail[0].taskname}</h2>
@@ -160,11 +154,8 @@ export default function TaskDetails({user}) {
                             </h5>
                           </div>
                         </div>
-                        {/* end assignee */}
-                      </div>{" "}
-                      {/* end col */}
+                      </div>
                       <div className="col-md-6">
-                        {/* start due date */}
                         <h5 className="mt-2 mb-1 fw-bold">Due Date</h5>
                         <div className="d-flex justify-content-between">
                           <div className="d-flex">
@@ -175,7 +166,6 @@ export default function TaskDetails({user}) {
                           </div>
                           <div>
                             <span className="me-2">Priority:</span>
-
                             <span
                               className={`badge p-1 ${renderPriority(
                                 taskDetail[0]
@@ -185,11 +175,8 @@ export default function TaskDetails({user}) {
                             </span>
                           </div>
                         </div>
-                        {/* end due date */}
-                      </div>{" "}
-                      {/* end col */}
+                      </div>
                     </div>
-                    {/* end row */}
                     <div className="d-flex justify-content-between">
                       <div className="col-md-6">
                         <h5 className="mt-3">Overview:</h5>
@@ -203,19 +190,11 @@ export default function TaskDetails({user}) {
                       </div>
                     </div>
 
-                    {/* start sub tasks/checklists */}
-                    {/* end sub tasks/checklists */}
-                  </div>{" "}
-                  {/* end card-body*/}
-                </div>{" "}
-                {/* end card*/}
-                {/* end card*/}
-              </div>{" "}
-              {/* end col */}
+                  </div>
+                </div>
+              </div>
             </div>
-            {/* end row */}
           </div>
-          {/* container */}
         </>
       );
     }

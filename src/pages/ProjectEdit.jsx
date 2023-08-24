@@ -91,9 +91,7 @@ console.log(id)
       return (
         <>
           <div className="content">
-            {/* Start Content*/}
             <div className="container-fluid">
-              {/* start page title */}
               <div className="row">
                 <div className="col-12">
                   <div className="page-title-box">
@@ -114,9 +112,7 @@ console.log(id)
                   </div>
                 </div>
               </div>
-              {/* end page title */}
 
-              {/* end row*/}
               <div className="row  mt-5">
                 <div className="col-md-12 col-xxl-6">
                   {/* project form */}
@@ -273,14 +269,10 @@ console.log(id)
                       </button>
                     </div>
                   </div>
-                  {/* end form*/}
-                </div>{" "}
-                {/* end col */}
+                </div>
               </div>
-              {/* end row*/}
-            </div>{" "}
-            {/* container */}
-          </div>{" "}
+            </div>
+          </div>
         </>
       );
     }

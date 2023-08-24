@@ -42,9 +42,7 @@ export default function UserInfo({ user }) {
       return (
         <>
           <div className="content">
-            {/* Start Content*/}
             <div className="container-fluid">
-              {/* start page title */}
               <div className="row">
                 <div className="col-12">
                   <div className="page-title-box">
@@ -63,10 +61,8 @@ export default function UserInfo({ user }) {
                   </div>
                 </div>
               </div>
-              {/* end page title */}
               <div className="row">
                 <div className="col-sm-12">
-                  {/* Profile */}
                   <div className="card bg-primary">
                     <div className="card-body profile-user-box">
                       <div className="row">
@@ -93,8 +89,7 @@ export default function UserInfo({ user }) {
                               </div>
                             </div>
                           </div>
-                        </div>{" "}
-                        {/* end col*/}
+                        </div>
                         <div className="col-sm-4">
                           {user.role == "Admin" ? (
                             <div className="text-center mt-sm-0 mt-3 text-sm-end">
@@ -119,20 +114,13 @@ export default function UserInfo({ user }) {
                             <div></div>
                           )}
                         </div>
-                        {/* end col*/}
-                      </div>{" "}
-                      {/* end row */}
-                    </div>{" "}
-                    {/* end card-body/ profile-user-box*/}
+                      </div>
+                    </div>
                   </div>
-                  {/*end profile/ card */}
-                </div>{" "}
-                {/* end col*/}
+                </div>
               </div>
-              {/* end row */}
               <div className="row">
                 <div className="col-xl-4">
-                  {/* Personal-Information */}
                   <div className="card">
                     <div className="card-body">
                       <h4 className="header-title mt-0 mb-3">
@@ -188,9 +176,7 @@ export default function UserInfo({ user }) {
                     </div>
                   </div>
                 </div>
-                {/* end col*/}
                 <div className="col-xl-8">
-                  {/* Chart*/}
                   <div className="card">
                     <div className="card-body pt-0">
                       <UserTask user={fetchedUser} />
@@ -201,15 +187,10 @@ export default function UserInfo({ user }) {
                       </div>
                     </div>
                   </div>
-                  {/* end row*/}
                 </div>
-                {/* end col */}
               </div>
-              {/* end row */}
-            </div>{" "}
-            {/* container */}
-          </div>{" "}
-          {/* content */}
+            </div>
+          </div>
         </>
       );
     }

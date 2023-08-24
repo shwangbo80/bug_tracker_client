@@ -89,9 +89,7 @@ export default function ProjectCreate({ fetchProjects, userList }) {
   return (
     <>
       <div className="content">
-        {/* Start Content*/}
         <div className="container-fluid">
-          {/* start page title */}
           <div className="row">
             <div className="col-12">
               <div className="page-title-box">
@@ -110,12 +108,9 @@ export default function ProjectCreate({ fetchProjects, userList }) {
               </div>
             </div>
           </div>
-          {/* end page title */}
 
-          {/* end row*/}
           <div className="row px=3 mt-5">
             <div className="col-md-12 col-xxl-6">
-              {/* project form */}
               <div className="mb-3">
                 <label htmlFor="simpleinput" className="form-label">
                   Project Name
@@ -178,7 +173,6 @@ export default function ProjectCreate({ fetchProjects, userList }) {
                   <i className="mdi mdi-plus" />
                   Add
                 </button>
-
                 <div className="d-flex mt-3">
                   {membersArr.map((item) => {
                     return (
@@ -265,14 +259,10 @@ export default function ProjectCreate({ fetchProjects, userList }) {
                   </button>
                 </div>
               </div>
-              {/* end form*/}
-            </div>{" "}
-            {/* end col */}
+            </div>
           </div>
-          {/* end row*/}
-        </div>{" "}
-        {/* container */}
-      </div>{" "}
+        </div>
+      </div>
     </>
   );
 }

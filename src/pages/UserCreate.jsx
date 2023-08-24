@@ -65,7 +65,6 @@ export default function UserCreate({ fetchProjects, userList }) {
     <>
       <div className="content">
         <div className="container-fluid">
-          {/* start page title */}
           <div className="row">
             <div className="col-12">
               <div className="page-title-box">

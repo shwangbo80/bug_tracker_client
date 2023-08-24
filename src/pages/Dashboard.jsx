@@ -134,7 +134,6 @@ export default function Dashboard({ user, setUser }) {
             </div>
           </div>
         </nav>
-        {/* Begin page */}
         <div className="wrapper">
           <div className="container mt-5">
             <div className="content">
@@ -157,9 +156,7 @@ export default function Dashboard({ user, setUser }) {
                   </div>
                 </div>
               </div>
-              {/* container */}
             </div>
-            {/* content */}
             <Switch>
               <Route path={`${path}/taskdetails/taskedit/:id`}>
                 <TaskEdit

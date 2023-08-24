@@ -38,18 +38,12 @@ export default function Error() {
                         <i className="mdi mdi-reply" /> Return Home
                       </a>
                     </div>
-                  </div>{" "}
-                  {/* end card-body*/}
+                  </div>
                 </div>
-                {/* end card */}
-              </div>{" "}
-              {/* end col */}
+              </div>
             </div>
-            {/* end row */}
           </div>
-          {/* end container */}
         </div>
-        {/* end page */}
         <footer className="footer footer-alt">
           2018 - © Hyper - Coderthemes.com
         </footer>

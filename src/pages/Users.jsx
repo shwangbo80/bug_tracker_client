@@ -43,9 +43,7 @@ export default function Users({ userList, user }) {
         <>
           <div className="wrapper">
             <div className="content">
-              {/* Start Content*/}
               <div className="container-fluid">
-                {/* start page title */}
                 <div className="row">
                   <div className="col-12">
                     <div className="page-title-box">
@@ -75,8 +73,6 @@ export default function Users({ userList, user }) {
                     <div></div>
                   )}
                 </div>
-                {/* end page title */}
-                {/* Map user start */}
                 <div className="row">
                   {users.map((item, key) => {
                     return (
@@ -84,13 +80,6 @@ export default function Users({ userList, user }) {
                         <div className="card">
                           <div className="card-body">
                             <div className="text-center">
-                              {/* <Link to={`/dashboard/userinfo/${item._id}`}>
-                                <img
-                                  src="/assets/images/users/avatar-1.jpg"
-                                  className="rounded-circle avatar-md img-thumbnail"
-                                  alt="friend"
-                                />
-                              </Link> */}
                               <Link to={`/dashboard/userinfo/${item._id}`}>
                                 <h4 className="mt-3 my-1">{item.username}</h4>
                               </Link>
@@ -113,16 +102,12 @@ export default function Users({ userList, user }) {
                             </div>
                           </div>
                         </div>
-                        {/* End col */}
                       </div>
                     );
                   })}
                 </div>
-                {/* End row */}
-              </div>{" "}
-              {/* container */}
-            </div>{" "}
-            {/* content */}
+              </div>
+            </div>
           </div>
         </>
       );

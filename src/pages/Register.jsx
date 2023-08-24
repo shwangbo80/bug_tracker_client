@@ -4,11 +4,9 @@ export default function Register() {
   return (
     <>
       <div className="auth-fluid">
-        {/*Auth fluid left content */}
         <div className="auth-fluid-form-box">
           <div className="align-items-center d-flex h-100">
             <div className="card-body">
-              {/* Logo */}
               <div className="auth-brand text-center text-lg-start">
                 <a href="index.html" className="logo-dark">
                   <span>
@@ -25,13 +23,11 @@ export default function Register() {
                   </span>
                 </a>
               </div>
-              {/* title*/}
               <h4 className="mt-3">Free Sign Up</h4>
               <p className="text-muted mb-4">
                 Don't have an account? Create your account, it takes less than a
                 minute
               </p>
-              {/* form */}
               <form action="#">
                 <div className="mb-3">
                   <label htmlFor="fullname" className="form-label">
@@ -92,7 +88,6 @@ export default function Register() {
                     <i className="mdi mdi-account-circle" /> Sign Up{" "}
                   </button>
                 </div>
-                {/* social*/}
                 <div className="text-center mt-4">
                   <p className="text-muted font-16">Sign up using</p>
                   <ul className="social-list list-inline mt-3">
@@ -131,8 +126,6 @@ export default function Register() {
                   </ul>
                 </div>
               </form>
-              {/* end form*/}
-              {/* Footer*/}
               <footer className="footer footer-alt">
                 <p className="text-muted">
                   Already have account?{" "}
@@ -142,12 +135,9 @@ export default function Register() {
                   </a>
                 </p>
               </footer>
-            </div>{" "}
-            {/* end .card-body */}
-          </div>{" "}
-          {/* end .align-items-center.d-flex.h-100*/}
+            </div>
+          </div>
         </div>
-        {/* end auth-fluid-form-box*/}
       </div>
     </>
   );

@@ -81,9 +81,7 @@ export default function ProjectDetails({
       return (
         <div>
           <div className="content">
-            {/* Start Content*/}
             <div className="container-fluid">
-              {/* start page title */}
               <div className="row">
                 <div className="col-12">
                   <div className="page-title-box">
@@ -104,7 +102,6 @@ export default function ProjectDetails({
                   </div>
                 </div>
               </div>
-              {/* end page title */}
               <div className="row">
                 <div className="col-12">
                   {/* project card */}
@@ -124,7 +121,6 @@ export default function ProjectDetails({
                               <i className="ri-more-fill" />
                             </a>
                             <div className="dropdown-menu dropdown-menu-end">
-                              {/* item*/}
                               <Link
                                 to={`/dashboard/projects/${projectDetail._id}`}
                                 className="dropdown-item"
@@ -132,7 +128,6 @@ export default function ProjectDetails({
                                 <i className="mdi mdi-pencil me-1" />
                                 Edit
                               </Link>
-                              {/* item*/}
                               <a
                                 href="#"
                                 className="dropdown-item"
@@ -144,14 +139,12 @@ export default function ProjectDetails({
                                 <i className="mdi mdi-delete me-1" />
                                 Delete
                               </a>
-                              {/* item*/}
                             </div>
                           </div>
                         ) : (
                           <div></div>
                         )}
 
-                        {/* project title*/}
                       </div>
                       <div className="badge bg-secondary text-light mb-3 px-3">
                         <h6>{projectDetail.status}</h6>
@@ -200,16 +193,11 @@ export default function ProjectDetails({
                           className="d-inline-block"
                         ></a>
                       </div>
-                    </div>{" "}
-                    {/* end card-body*/}
-                  </div>{" "}
-                  {/* end card*/}
+                    </div>
+                  </div>
                 </div>
-                {/* end col */}
               </div>
-              {/* end row */}
-            </div>{" "}
-            {/* container */}
+            </div>
           </div>
         </div>
       );
@@ -229,7 +217,6 @@ export default function ProjectDetails({
           <div className="container-fluid">
             <div className="row">
               <div className="col-12">
-                {/* start page title */}
                 <div className="page-title-box">
                   <div className="page-title-right">
                     <div className="app-search"></div>
@@ -244,7 +231,6 @@ export default function ProjectDetails({
                     </Link>
                   </h4>
                 </div>
-                {/* end page title */}
 
                 {/* Ongoing task */}
                 <div className="mt-2">
@@ -257,8 +243,7 @@ export default function ProjectDetails({
                       aria-expanded="false"
                       aria-controls="ongoingTasks"
                     >
-                      {/* <i className="uil uil-angle-down font-18" />
-                      Ongoing <span className="text-muted">(10)</span> */}
+
                       <i className="uil uil-angle-down font-18" />
                       Ongoing <span className="text-muted">(
                         {projectTasks.filter((a) => a.status === "Ongoing").length}
@@ -292,10 +277,8 @@ export default function ProjectDetails({
                                         </h4>
                                       </label>
                                     </Link>
-                                  </div>{" "}
-                                  {/* end checkbox */}
-                                </div>{" "}
-                                {/* end col */}
+                                  </div>
+                                </div>
                                 <div className="col-sm-6">
                                   <div className="d-flex justify-content-between">
                                     <div>
@@ -323,10 +306,8 @@ export default function ProjectDetails({
                                         </li>
                                       </ul>
                                     </div>
-                                  </div>{" "}
-                                  {/* end .d-flex*/}
-                                </div>{" "}
-                                {/* end col */}
+                                  </div>
+                                </div>
                                 <hr></hr>
                               </div>
                             );
@@ -381,10 +362,8 @@ export default function ProjectDetails({
                                         </h4>
                                       </label>
                                     </Link>
-                                  </div>{" "}
-                                  {/* end checkbox */}
-                                </div>{" "}
-                                {/* end col */}
+                                  </div>
+                                </div>
                                 <div className="col-sm-6">
                                   <div className="d-flex justify-content-between">
                                     <div>
@@ -412,10 +391,8 @@ export default function ProjectDetails({
                                         </li>
                                       </ul>
                                     </div>
-                                  </div>{" "}
-                                  {/* end .d-flex*/}
-                                </div>{" "}
-                                {/* end col */}
+                                  </div>
+                                </div>
                                 <hr></hr>
                               </div>
                             );
@@ -471,10 +448,8 @@ export default function ProjectDetails({
                                         </h4>
                                       </label>
                                     </Link>
-                                  </div>{" "}
-                                  {/* end checkbox */}
-                                </div>{" "}
-                                {/* end col */}
+                                  </div>
+                                </div>
                                 <div className="col-sm-6">
                                   <div className="d-flex justify-content-between">
                                     <div>
@@ -502,10 +477,8 @@ export default function ProjectDetails({
                                         </li>
                                       </ul>
                                     </div>
-                                  </div>{" "}
-                                  {/* end .d-flex*/}
-                                </div>{" "}
-                                {/* end col */}
+                                  </div>
+                                </div>
                                 <hr></hr>
                               </div>
                             );
@@ -561,10 +534,8 @@ export default function ProjectDetails({
                                         </h4>
                                       </label>
                                     </Link>
-                                  </div>{" "}
-                                  {/* end checkbox */}
-                                </div>{" "}
-                                {/* end col */}
+                                  </div>
+                                </div>
                                 <div className="col-sm-6">
                                   <div className="d-flex justify-content-between">
                                     <div>
@@ -592,10 +563,8 @@ export default function ProjectDetails({
                                         </li>
                                       </ul>
                                     </div>
-                                  </div>{" "}
-                                  {/* end .d-flex*/}
-                                </div>{" "}
-                                {/* end col */}
+                                  </div>
+                                </div>
                                 <hr></hr>
                               </div>
                             );
@@ -632,7 +601,6 @@ export default function ProjectDetails({
           </div>
         </div>
       </footer>
-      {/* end Footer */}
     </>
   );
 }

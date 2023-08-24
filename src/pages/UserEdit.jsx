@@ -75,7 +75,6 @@ export default function UserEdit(fetchProjects) {
         <>
           <div className="content">
             <div className="container-fluid">
-              {/* start page title */}
               <div className="row">
                 <div className="col-12">
                   <div className="page-title-box">
@@ -95,8 +94,7 @@ export default function UserEdit(fetchProjects) {
                     <h4 className="page-title">Create new user</h4>
                   </div>
                 </div>
-              </div>
-
+              </div>W
               <div className="row mt-5 px-3">
                 <div className="col-md-12 col-xxl-6">
                   <div className="mb-3">

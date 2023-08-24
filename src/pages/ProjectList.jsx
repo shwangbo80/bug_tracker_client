@@ -44,7 +44,6 @@ export default function ProjectList({
           <div className="col-md-6 col-xxl-3" key={key}>
             <div className="card d-block">
               <div className="card-body">
-                {/* project title*/}
                 <h4 className="mt-0">
                   <Link
                     to={`/dashboard/projectdetails/${item._id}`}
@@ -69,9 +68,7 @@ export default function ProjectList({
                   <p>Start: {item.startdate}</p>
                   <p>Due: {item.duedate}</p>
                 </div>
-                {/* project detail*/}
               </div>
-              {/* end card-body*/}
             </div>
           </div>
         );
@@ -83,9 +80,7 @@ export default function ProjectList({
   return (
     <>
       <div className="content">
-        {/* Start Content*/}
         <div className="container-fluid">
-          {/* start page title */}
           <div className="row">
             <div className="col-12">
               <div className="page-title-box">
@@ -103,7 +98,6 @@ export default function ProjectList({
               </div>
             </div>
           </div>
-          {/* end page title */}
           <div className="row mb-2">
             <div className="col-sm-4">
               {user.role === "Admin" ? (
@@ -121,13 +115,9 @@ export default function ProjectList({
           </div>
           <div className="row">
             {renderProjects()}
-            {/* end col */}
           </div>
-          {/* end row*/}
-        </div>{" "}
-        {/* container */}
-      </div>{" "}
-      {/* content */}
+        </div>
+      </div>
     </>
   );
 }

@@ -4,9 +4,7 @@ export default function Faq() {
   return (
     <>
       <div className="content">
-        {/* Start Content*/}
         <div className="container-fluid">
-          {/* start page title */}
           <div className="row">
             <div className="col-12">
               <div className="page-title-box">
@@ -25,13 +23,11 @@ export default function Faq() {
               </div>
             </div>
           </div>
-          {/* end page title */}
           <div className="row">
             <div className="col-sm-12">
               <div className="text-center">
                 <h3 className="">Frequently Asked Questions</h3>
                 <p className="text-muted mt-3">
-                  {" "}
                   Nisi praesentium similique totam odio obcaecati,
                   reprehenderit, dignissimos rem temporibus ea inventore alias!
                   <br /> Beatae animi nemo ea tempora, temporibus laborum
@@ -46,9 +42,7 @@ export default function Faq() {
                 </button>
               </div>
             </div>
-            {/* end col */}
           </div>
-          {/* end row */}
           <div className="row pt-5">
             <div className="col-lg-5 offset-lg-1">
               {/* Question/Answer */}
@@ -97,7 +91,6 @@ export default function Faq() {
                 </p>
               </div>
             </div>
-            {/*/col-md-5 */}
             <div className="col-lg-5">
               {/* Question/Answer */}
               <div>
@@ -141,11 +134,8 @@ export default function Faq() {
                 </p>
               </div>
             </div>
-            {/*/col-md-5*/}
           </div>
-          {/* end row */}
-        </div>{" "}
-        {/* container */}
+        </div>
       </div>
     </>
   );

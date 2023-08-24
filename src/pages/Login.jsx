@@ -79,7 +79,6 @@ export default function Login({ user, setUser }) {
                         />
                       </div>
                     </div>
-
                     <div className="mb-3 mb-0 text-center">
                       <button className="btn btn-primary" onClick={handleLogin}>
                         Log In
@@ -91,9 +90,7 @@ export default function Login({ user, setUser }) {
                     </div>
                   </form>
                 </div>{" "}
-                {/* end card-body */}
               </div>
-              {/* end card */}
               <div className="row mt-3">
                 <div className="col-12 text-center">
                   <p className="text-muted">
@@ -103,20 +100,14 @@ export default function Login({ user, setUser }) {
                     </a>
                   </p>
                 </div>{" "}
-                {/* end col */}
               </div>
               <footer className="footer footer-alt">
                 2018 - © Hyper - Coderthemes.com
               </footer>
-              {/* end row */}
-            </div>{" "}
-            {/* end col */}
+            </div>
           </div>
-          {/* end row */}
         </div>
-        {/* end container */}
       </div>
-      {/* end page */}
     </>
   );
 }

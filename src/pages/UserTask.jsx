@@ -89,7 +89,6 @@ export default function UserTask({
                 <div className="col-md-6 col-xxl-3" key={key}>
                   <div className="card d-block">
                     <div className="card-body">
-                      {/* project title*/}
                       <Link
                         to={`/dashboard/projectdetails/${item._id}`}
                         onClick={() => setSelectedProject(item._id)}
@@ -136,14 +135,12 @@ export default function UserTask({
             <div className="container-fluid">
               <div className="row">
                 <div className="col-12">
-                  {/* start page title */}
                   <div className="page-title-box">
                     <div className="page-title-right">
                       <div className="app-search"></div>
                     </div>
                     <h4 className="page-title">My Tasks</h4>
                   </div>
-                  {/* end page title */}
 
                   {/* Ongoing task */}
                   <div className="mt-2">
@@ -157,7 +154,10 @@ export default function UserTask({
                         aria-controls="ongoingTasks"
                       >
                         <i className="uil uil-angle-down font-18" />
-                        Ongoing <span className="text-muted">(10)</span>
+                        Ongoing <span className="text-muted">
+                        {userTasks
+                            .filter((a) => a.status === "Ongoing").length}
+                        </span>
                       </a>
                     </h5>
                     <div className="collapse show" id="ongoingTasks">
@@ -189,10 +189,8 @@ export default function UserTask({
                                           </p>
                                         </label>
                                       </Link>
-                                    </div>{" "}
-                                    {/* end checkbox */}
-                                  </div>{" "}
-                                  {/* end col */}
+                                    </div>
+                                  </div>
                                   <div className="col-sm-6">
                                     <div className="d-flex justify-content-between">
                                       <p className="mt-1">{item.status}</p>
@@ -217,11 +215,8 @@ export default function UserTask({
                                           </li>
                                         </ul>
                                       </div>
-                                    </div>{" "}
-                                    {/* end .d-flex*/}
-                                  </div>{" "}
-                                  {/* end col */}
-                                  {/* <hr></hr> */}
+                                    </div>
+                                  </div>
                                 </div>
                               );
                             })}
@@ -243,7 +238,10 @@ export default function UserTask({
                         aria-controls="pausedTasks"
                       >
                         <i className="uil uil-angle-down font-18" />
-                        Paused <span className="text-muted">(10)</span>
+                        Paused <span className="text-muted">
+                        {userTasks
+                            .filter((a) => a.status === "Paused").length}
+                        </span>
                       </a>
                     </h5>
                     <div className="collapse show" id="pausedTasks">
@@ -275,10 +273,8 @@ export default function UserTask({
                                           </p>
                                         </label>
                                       </Link>
-                                    </div>{" "}
-                                    {/* end checkbox */}
-                                  </div>{" "}
-                                  {/* end col */}
+                                    </div>
+                                  </div>
                                   <div className="col-sm-6">
                                     <div className="d-flex justify-content-between">
                                       <p className="mt-1">{item.status}</p>
@@ -303,11 +299,8 @@ export default function UserTask({
                                           </li>
                                         </ul>
                                       </div>
-                                    </div>{" "}
-                                    {/* end .d-flex*/}
-                                  </div>{" "}
-                                  {/* end col */}
-                                  {/* <hr></hr> */}
+                                    </div>
+                                  </div>
                                 </div>
                               );
                             })}
@@ -329,7 +322,10 @@ export default function UserTask({
                         aria-controls="underReviewTasks"
                       >
                         <i className="uil uil-angle-down font-18" />
-                        Under Review <span className="text-muted">(10)</span>
+                        Under Review <span className="text-muted">
+                        {userTasks
+                            .filter((a) => a.status === "Under Review").length}
+                        </span>
                       </a>
                     </h5>
                     <div className="collapse show" id="underReviewTasks">
@@ -361,10 +357,8 @@ export default function UserTask({
                                           </p>
                                         </label>
                                       </Link>
-                                    </div>{" "}
-                                    {/* end checkbox */}
-                                  </div>{" "}
-                                  {/* end col */}
+                                    </div>
+                                  </div>
                                   <div className="col-sm-6">
                                     <div className="d-flex justify-content-between">
                                       <p className="mt-1">{item.status}</p>
@@ -389,11 +383,8 @@ export default function UserTask({
                                           </li>
                                         </ul>
                                       </div>
-                                    </div>{" "}
-                                    {/* end .d-flex*/}
-                                  </div>{" "}
-                                  {/* end col */}
-                                  {/* <hr></hr> */}
+                                    </div>
+                                  </div>
                                 </div>
                               );
                             })}
@@ -415,7 +406,10 @@ export default function UserTask({
                         aria-controls="completedTasks"
                       >
                         <i className="uil uil-angle-down font-18" />
-                        Completed <span className="text-muted">(10)</span>
+                        Completed <span className="text-muted">
+                        {userTasks
+                            .filter((a) => a.status === "Completed").length}
+                        </span>
                       </a>
                     </h5>
                     <div className="collapse show" id="completedTasks">
@@ -447,10 +441,8 @@ export default function UserTask({
                                           </p>
                                         </label>
                                       </Link>
-                                    </div>{" "}
-                                    {/* end checkbox */}
-                                  </div>{" "}
-                                  {/* end col */}
+                                    </div>
+                                  </div>
                                   <div className="col-sm-6">
                                     <div className="d-flex justify-content-between">
                                       <p className="mt-1">{item.status}</p>
@@ -475,11 +467,8 @@ export default function UserTask({
                                           </li>
                                         </ul>
                                       </div>
-                                    </div>{" "}
-                                    {/* end .d-flex*/}
-                                  </div>{" "}
-                                  {/* end col */}
-                                  {/* <hr></hr> */}
+                                    </div>
+                                  </div>
                                 </div>
                               );
                             })}

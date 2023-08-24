@@ -4,7 +4,6 @@ export default function Landing() {
   return (
     <>
       <>
-        {/* START HERO */}
         <section className="hero-section">
           <div className="container">
             <div className="row align-items-center">
@@ -191,49 +190,9 @@ export default function Landing() {
                 </div>
               </div>
             </div>
-            {/* <div className="row pb-3 pt-5 align-items-center">
-              <div className="col-lg-6 col-md-5">
-                <h3 className="fw-normal">Simply beautiful design</h3>
-                <p className="text-muted mt-3">
-                  The simplest and fastest way to build dashboard or admin
-                  panel. Hyper is built using the latest tech and tools and
-                  provide an easy way to customize anything, including an
-                  overall color schemes, layout, etc.
-                </p>
-                <div className="mt-4">
-                  <p className="text-muted">
-                    <i className="mdi mdi-circle-medium text-success" /> Built
-                    with latest Bootstrap
-                  </p>
-                  <p className="text-muted">
-                    <i className="mdi mdi-circle-medium text-success" />{" "}
-                    Extensive use of SCSS variables
-                  </p>
-                  <p className="text-muted">
-                    <i className="mdi mdi-circle-medium text-success" /> Well
-                    documented and structured code
-                  </p>
-                  <p className="text-muted">
-                    <i className="mdi mdi-circle-medium text-success" />{" "}
-                    Detailed Documentation
-                  </p>
-                </div>
-                <a href="" className="btn btn-success rounded-pill mt-3">
-                  Read More <i className="mdi mdi-arrow-right ms-1" />
-                </a>
-              </div>
-              <div className="col-lg-5 col-md-6 offset-md-1">
-                <img
-                  src="assets/images/svg/features-2.svg"
-                  className="img-fluid"
-                  alt=""
-                />
-              </div>
-            </div> */}
           </div>
         </section>
         {/* END FEATURES 2 */}
-        {/* START FOOTER */}
       </>
     </>
   );
